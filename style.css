@@ -1,0 +1,496 @@
+@font-face {
+    font-family: weblysleekuisl;
+    src: url(weblysleekuisl.ttf);
+}
+
+body {
+    font-family: weblysleekuisl;
+    background-image: url('img/bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.desktop {
+    width: 100%;
+    height: calc(100vh - 42px);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.desktop-app-box {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin: 3px;
+    margin-bottom: 28px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 14px;
+    border: 1px solid transparent;
+}
+
+.desktop-app-box:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.desktop-app-box:active,
+.desktop-app-box:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.desktop-app-box-large {
+    height: 84px;
+    margin-bottom: 14px;
+}
+
+.desktop-app-box img {
+    height: 46px;
+    width: 46px;
+    margin-bottom: 5px;
+}
+
+.start-center::-webkit-scrollbar,
+.start-right::-webkit-scrollbar {
+    background-color: rgba(90, 90, 90, 0.4);
+    width: 13px;
+}
+
+.start-center::-webkit-scrollbar-button:vertical:increment,
+.start-right::-webkit-scrollbar-button:vertical:increment {
+    background-image: url('icon/arrow-down.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.start-center::-webkit-scrollbar-button:vertical:decrement,
+.start-right::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url('icon/arrow-up.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.start-center::-webkit-scrollbar-button,
+.start-right::-webkit-scrollbar-button {
+    background-color: rgba(90, 90, 90, 0.1);
+}
+
+.start-center::-webkit-scrollbar-button:hover,
+.start-right::-webkit-scrollbar-button:hover {
+    background-color: rgba(180, 180, 180, 0.6);
+}
+
+.start-center::-webkit-scrollbar-button:active,
+.start-right::-webkit-scrollbar-button:active {
+    background-color: rgba(180, 180, 180, 0.9);
+}
+
+.start-center::-webkit-scrollbar-track,
+.start-right::-webkit-scrollbar-track {
+    background-color: rgba(90, 90, 90, 0.4);
+}
+
+.start-center::-webkit-scrollbar-track-piece,
+.start-right::-webkit-scrollbar-track-piece {
+    /* 4 */
+}
+
+.start-center::-webkit-scrollbar-thumb,
+.start-right::-webkit-scrollbar-thumb {
+    background-color: rgba(180, 180, 180, 0.3);
+}
+
+.start-center::-webkit-scrollbar-thumb:hover,
+.start-right::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(180, 180, 180, 0.6);
+}
+
+.start-center::-webkit-scrollbar-thumb:active,
+.start-right::-webkit-scrollbar-thumb:active {
+    background-color: rgba(180, 180, 180, 0.9);
+}
+
+.start-center::-webkit-scrollbar-corner,
+.start-right::-webkit-scrollbar-corner {
+    /* 6 */
+}
+
+.start-center::-webkit-resizer .inline-flex,
+.start-right::-webkit-resizer .inline-flex {
+    height: 550px !important;
+    display: inline-flex !important;
+}
+
+.start {
+    width: 630px !important;
+    height: 550px;
+    max-height: calc(100vh - 52px);
+    background-color: rgba(19, 19, 19, 0.7);
+    position: fixed;
+    left: 0;
+    bottom: 42px;
+    color: #fff;
+    display: none;
+    cursor: default;
+    opacity: 1 !important;
+}
+
+.start-left,
+.start-center,
+.start-right {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+}
+
+.start-left {
+    width: 50px;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.start-left-btn {
+    width: 50px;
+    height: 50px;
+    display: block;
+    vertical-align: middle;
+}
+
+.start-left-btn:hover {
+    background-color: rgba(90, 90, 90, 0.5);
+}
+
+.start-left-btn:active {
+    background-color: rgba(90, 90, 90, 0.8);
+}
+
+.start-left img {
+    height: 20px;
+    width: auto;
+    padding-top: 15px;
+}
+
+.start-left-bottom {
+    position: absolute;
+    bottom: 0px;
+}
+
+.start-center {
+    width: 255px;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.start-center:hover {
+    overflow-y: auto;
+}
+
+.start-more-btn {
+    margin-left: 3px;
+}
+
+.start-center h2:first-child {
+    margin-top: 5px;
+}
+
+.start-center h2 {
+    padding: 16px 15px 10px 15px;
+}
+
+.start-center h2:hover {
+    background-color: rgba(90, 90, 90, 0.5);
+}
+
+.start-center h2:active {
+    background-color: rgba(90, 90, 90, 0.8);
+    filter: blur(0.5px);
+}
+
+.start-center h3 {
+    padding: 11px 15px 12px 15px;
+}
+
+.start-center h3:hover {
+    background-color: rgba(90, 90, 90, 0.5);
+}
+
+.start-center h3:active {
+    background-color: rgba(90, 90, 90, 0.8);
+    filter: blur(0.5px);
+    padding: 11px 17px 12px 17px;
+    font-size: 11.8px;
+}
+
+.start-center h3:active .start-app-icon {
+    height: 31px;
+    width: 31px;
+}
+
+.start-hidden-h3 {
+    display: none;
+}
+
+.start-app-icon {
+    height: 32px;
+    width: 32px;
+    background-color: #0078D7;
+    display: inline-block;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    margin-right: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.start-app-icon-small {
+    width: 70%;
+    height: 70%;
+    margin-top: 15%;
+}
+
+.start-app-icon-mid {
+    width: 80%;
+    height: 80%;
+    margin-top: 10%;
+}
+
+.start-app-icon-large {
+    width: 90%;
+    height: 90%;
+    margin-top: 5%;
+}
+
+.start-right {
+    width: 316px;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-size: 0;
+}
+
+.start-right:hover {
+    overflow-y: auto;
+}
+
+.start-right h2 {
+    padding: 11px 15px 12px 2px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-size: 12px;
+}
+
+.start-right h2:first-child {
+    margin-top: 5px;
+    padding: 16px 15px 12px 2px;
+}
+
+.start-right-1x1 {
+    height: 96px;
+    width: 96px;
+    display: inline-table;
+    background-color: #0078D7;
+    margin: 2px;
+}
+
+.start-right-2x1 {
+    height: 96px;
+    width: 196px;
+    display: inline-table;
+    background-color: #0078D7;
+    margin: 2px;
+    color: #fff;
+}
+
+.start-right-calendar {
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+}
+
+.start-right-calendar span {
+    font-size: 24px;
+}
+
+.taskbar {
+    height: 42px;
+    width: 100%;
+    background-color: rgba(19, 19, 19, 0.7);
+    position: fixed;
+    bottom: 0;
+    cursor: default;
+}
+
+.taskbar-left {
+    height: 42px;
+    display: inline-block;
+    font-size: 0;
+}
+
+.taskbar-left div {
+    height: 42px;
+    width: 50px;
+    display: table-cell;
+    font-size: 16px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.taskbar-left div:hover {
+    background-color: rgba(90, 90, 90, 0.5);
+}
+
+.taskbar-left div:active {
+    background-color: rgba(90, 90, 90, 0.1);
+}
+
+.taskbar-left img {
+    height: 20px;
+    width: auto;
+    padding-right: 5px;
+}
+
+.taskbar-start-btn img {
+    height: 16px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.taskbar-start-btn:hover img {
+    filter: brightness(1) invert(0);
+}
+
+.taskbar-right {
+    float: right;
+    height: 42px;
+    display: inline-block;
+    font-size: 0;
+    color: #fff;
+}
+
+.taskbar-right img {
+    height: 16px;
+    width: auto;
+    padding-right: 0px;
+}
+
+.taskbar-right div {
+    height: 42px;
+    display: table-cell;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.taskbar-right-reg {
+    width: 24px;
+}
+
+.taskbar-right div:hover {
+    background-color: rgba(90, 90, 90, 0.5);
+}
+
+.taskbar-right div:active {
+    background-color: rgba(90, 90, 90, 0.1);
+}
+
+.taskbar-lang-btn {
+    width: 38px;
+}
+
+.taskbar-time-btn {
+    width: 65px;
+    line-height: 18px;
+}
+
+.taskbar-notification-btn {
+    width: 38px;
+}
+
+.taskbar-desktop-btn-space {
+    width: 8px;
+}
+
+.taskbar-desktop-btn {
+    width: 4px;
+    border-left: 1px solid #666;
+}
+
+.taskbar-desktop-btn-space:hover,
+.taskbar-desktop-btn-space:active {
+    background-color: rgba(19, 19, 19, 0.7) !important;
+}
+
+.right-click-menu {
+    background: #2b2b2b;
+    border: 1px solid #a0a0a0;
+    color: #fff;
+    position: absolute;
+    z-index: 999999;
+    display: none;
+    box-shadow: 2px 6px 2px rgba(20, 20, 20, 0.6);
+    font-size: 13px;
+}
+
+.right-click-menu hr {
+    border: 0;
+    border-bottom: 1px solid #888;
+    margin: 5px 10px
+}
+
+.right-click-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.right-click-menu ul a {
+    text-decoration: none;
+    cursor: default;
+}
+
+.right-click-menu ul li {
+    width: 260px;
+    padding: 9px 14px 9px 34px;
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+.right-click-menu ul .right-click-menu-hvicon {
+    padding: 9px 14px 9px 14px;
+    width: 280px;
+}
+
+.right-click-menu ul li:hover {
+    background-color: #414141;
+    color: #fff;
+}
+
+.right-click-menu img {
+    width: 14px;
+    height: 14px;
+    margin-bottom: -2px;
+    margin-right: 8px;
+}
+
+.right-click-menu .right-click-menu-more {
+    width: 14px;
+    height: 16px;
+    margin-top: -1px;
+    float: right;
+    margin-right: -4px;
+}
+
+.right-click-sub-menu {
+    display: none;
+}

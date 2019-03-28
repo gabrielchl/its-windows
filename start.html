@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>It's Windows!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+</head>
+
+<body style="background-color: #000; display: table-cell; background-color: #000; width: 100vw; height: 100vh; vertical-align: middle;">
+    <div class="start-screen-wrap" style="text-align:center;"><img src="icon/windows.png" style="width:100px; height: 100px;">
+        <div style="height: 220px; max-height: calc(100vh - 160px);"></div>
+        <img src="img/spinner.GIF" style="width:25px; height: 25px;"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            window.setTimeout(function() {
+                location.href = "login.html";
+            }, 5000);
+        });
+
+    </script>
+</body>
+
+</html>

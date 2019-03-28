@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>It's Windows!</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="reset.css">
+</head>
+
+<body>
+    <style>
+        @font-face {
+            font-family: weblysleekuisl;
+            src: url(weblysleekuil.ttf);
+        }
+        
+        body {
+            font-family: weblysleekuisl;
+            overflow: hidden;
+        }
+        
+        .lock-screen-right div {
+            display: inline-block;
+        }
+        
+        .lock-screen-right img {
+            width: 17px;
+            height: 17px;
+            margin-right: 24px;
+        }
+        
+        .login-screen-password-input-wrap {
+            display: inline-block;
+            padding: 2px;
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .login-screen-password-input-wrap:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        
+        .login-screen-password-input::placeholder {
+            font-size: 14px;
+        }
+
+    </style>
+    <div class="lock-screen" style="z-index: 1; background-image: url('img/lock-bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; height: 100vh; width: 100%;">
+        <div class="lock-screen-cover" style="height: 100vh; width: 100%; background-color: rgba(0,0,0,0.2)"></div>
+        <div class="lock-screen-content">
+            <div class="lock-screen-left" style="position: fixed; bottom: 80px; left: 20px; color: white; ">
+                <p style="font-size: 100px; margin-bottom: 10px;">2<span style="vertical-align: 10%;">:</span>51</p>
+                <p style="font-size: 48px;">Sunday, July 30</p>
+            </div>
+            <div class="lock-screen-right" style="position: fixed; bottom: 24px; right: 0;">
+                <div class="lock-screen-wifi-btn"><img src="icon/wifi.ico"></div>
+                <div class="lock-screen-battery-btn"><img src="icon/battery.ico"></div>
+            </div>
+        </div>
+        <div class="login-screen" style="position: absolute; top: 0; left: 0; height: 100vh; width: 100%; text-align: center;">
+            <div style="display: table-cell; vertical-align: middle; width: 100vw; height: 100vh;">
+                <div class="login-form" style="color: #fff;"><img src="img/user-pro-pic.png" style="height: 140px; width: 140px; border-radius: 100%; margin-bottom: 20px;">
+                    <p style="font-size: 42px;">Gabriel Chi Hong Lee</p>
+                    <div class="login-screen-password-input-wrap" style="margin-bottom: 80px; margin-top: 35px;">
+                        <input type="password" name="login-screen-password" placeholder="Password" class="login-screen-password-input" style="padding: 5px 8px; font-size: 18px; width:275px; border: 0; outline: 0;"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js" integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE=" crossorigin="anonymous"></script>
+    <script>
+        var password = "";
+        $(".login-screen").hide();
+
+        $("body").on("click keypress", function() {
+            $(".lock-screen-left, .lock-screen-right").animate({
+                "bottom": "110vh"
+            }, 200);
+
+            $(".lock-screen-cover").delay(200).animate({
+                "backgroundColor": "rgba(0,0,0,0.4)"
+            }, 200);
+
+            $(".login-screen").delay(200).fadeIn();
+        });
+
+        $('input').keyup(function() {
+            password = $(this).val();
+            console.log(password);
+            if (password == "By Gabriel") {
+                window.location.replace("main.html");
+            } else {}
+        });
+
+    </script>
+    <script type="text/javascript">
+        var idleTime = 0;
+        $(document).ready(function() {
+            var idleInterval = setInterval(timerIncrement, 1000);
+
+            $(this).mousemove(function(e) {
+                idleTime = 0;
+            });
+            $(this).keypress(function(e) {
+                idleTime = 0;
+            });
+        });
+
+        function timerIncrement() {
+            idleTime = idleTime + 1;
+            if (idleTime > 45) {
+                $(".lock-screen-left").delay(200).animate({
+                    "bottom": "80px"
+                }, 200);
+
+                $(".lock-screen-right").delay(200).animate({
+                    "bottom": "24px"
+                }, 200);
+
+                $(".lock-screen-cover").delay(200).animate({
+                    "backgroundColor": "rgba(0,0,0,0.2)"
+                }, 200);
+
+                $(".login-screen").fadeOut();
+                idleTime = 0;
+            }
+        }
+
+    </script>
+</body>
+
+</html>
