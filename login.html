@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>It's Windows!</title>
+    <title>Windows 10</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="reset.css">
@@ -51,8 +51,40 @@
         <div class="lock-screen-cover" style="height: 100vh; width: 100%; background-color: rgba(0,0,0,0.2)"></div>
         <div class="lock-screen-content">
             <div class="lock-screen-left" style="position: fixed; bottom: 80px; left: 20px; color: white; ">
-                <p style="font-size: 100px; margin-bottom: 10px;">2<span style="vertical-align: 10%;">:</span>51</p>
-                <p style="font-size: 48px;">Sunday, July 30</p>
+                <p style="font-size: 100px; margin-bottom: 10px;">
+
+
+ <p style="font-size: 100px; margin-bottom: 10px;">
+<script type="text/javascript">
+    window.onload = function () {
+        DisplayCurrentTime();
+    };
+    function DisplayCurrentTime() {
+        var date = new Date();
+        var hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+        var am_pm = date.getHours() >= 12 ? "PM" : "AM";
+        hours = hours < 10 ? "0" + hours : hours;
+        var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+        var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+        time = hours + ":" + minutes + ":" + am_pm;
+        var lblTime = document.getElementById("lblTime");
+        lblTime.innerHTML = time.toLocaleString('en-US');
+		var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        var lblMonths = document.getElementById("lblMonths").innerHTML = months[date.getMonth()];
+        var lbldays = document.getElementById("lbldays").innerHTML = days[date.getMonth()];
+        var lbldate = document.getElementById("lbldate").innerHTML = date.getDate();
+
+		lblMonths.innerHTML = months;
+		lbldays.innerHTML = days;
+		lbldate.innerHTML = Date;
+    };
+</script>
+<span id ="lblTime"></span></p>
+  <p style="font-size: 48px;"><span id = "lbldays"></span>, <span id = "lblMonths"></span> <span id = "lbldate"></span></p>
+				
+<!--<p style="font-size: 100px; margin-bottom: 10px;">2<span style="vertical-align: 10%;">:</span>51</p>-->
+                <!--<p style="font-size: 48px;">Sunday, July 30</p>-->
             </div>
             <div class="lock-screen-right" style="position: fixed; bottom: 24px; right: 0;">
                 <div class="lock-screen-wifi-btn"><img src="icon/wifi.ico"></div>
@@ -62,7 +94,7 @@
         <div class="login-screen" style="position: absolute; top: 0; left: 0; height: 100vh; width: 100%; text-align: center;">
             <div style="display: table-cell; vertical-align: middle; width: 100vw; height: 100vh;">
                 <div class="login-form" style="color: #fff;"><img src="img/user-pro-pic.png" style="height: 140px; width: 140px; border-radius: 100%; margin-bottom: 20px;">
-                    <p style="font-size: 42px;">Gabriel Chi Hong Lee</p>
+                    <p style="font-size: 42px;">Owner</p>
                     <div class="login-screen-password-input-wrap" style="margin-bottom: 80px; margin-top: 35px;">
                         <input type="password" name="login-screen-password" placeholder="Password" class="login-screen-password-input" style="padding: 5px 8px; font-size: 18px; width:275px; border: 0; outline: 0;"></div>
                 </div>
