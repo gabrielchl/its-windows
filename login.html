@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>It's Windows!</title>
+    <title>Windows 10</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="reset.css">
@@ -16,32 +16,32 @@
             font-family: weblysleekuisl;
             src: url(weblysleekuil.ttf);
         }
-        
+
         body {
             font-family: weblysleekuisl;
             overflow: hidden;
         }
-        
+
         .lock-screen-right div {
             display: inline-block;
         }
-        
+
         .lock-screen-right img {
             width: 17px;
             height: 17px;
             margin-right: 24px;
         }
-        
+
         .login-screen-password-input-wrap {
             display: inline-block;
             padding: 2px;
             background-color: rgba(255, 255, 255, 0.4);
         }
-        
+
         .login-screen-password-input-wrap:hover {
             background-color: rgba(255, 255, 255, 1);
         }
-        
+
         .login-screen-password-input::placeholder {
             font-size: 14px;
         }
@@ -50,9 +50,9 @@
     <div class="lock-screen" style="z-index: 1; background-image: url('img/lock-bg.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center; height: 100vh; width: 100%;">
         <div class="lock-screen-cover" style="height: 100vh; width: 100%; background-color: rgba(0,0,0,0.2)"></div>
         <div class="lock-screen-content">
-            <div class="lock-screen-left" style="position: fixed; bottom: 80px; left: 20px; color: white; ">
-                <p style="font-size: 100px; margin-bottom: 10px;">2<span style="vertical-align: 10%;">:</span>51</p>
-                <p style="font-size: 48px;">Sunday, July 30</p>
+            <div class="lock-screen-left" style="position: fixed; bottom: 80px; left: 20px; color: white;">
+                <p style="font-size: 100px; margin-bottom: 10px;"><span id="lblTime"></span></p>
+                <p style="font-size: 48px;"><span id="lblDays"></span>, <span id="lblMonths"></span> <span id="lblDate"></span></p>
             </div>
             <div class="lock-screen-right" style="position: fixed; bottom: 24px; right: 0;">
                 <div class="lock-screen-wifi-btn"><img src="icon/wifi.ico"></div>
@@ -62,17 +62,29 @@
         <div class="login-screen" style="position: absolute; top: 0; left: 0; height: 100vh; width: 100%; text-align: center;">
             <div style="display: table-cell; vertical-align: middle; width: 100vw; height: 100vh;">
                 <div class="login-form" style="color: #fff;"><img src="img/user-pro-pic.png" style="height: 140px; width: 140px; border-radius: 100%; margin-bottom: 20px;">
-                    <p style="font-size: 42px;">Gabriel Chi Hong Lee</p>
+                    <p style="font-size: 42px;">Owner</p>
                     <div class="login-screen-password-input-wrap" style="margin-bottom: 80px; margin-top: 35px;">
                         <input type="password" name="login-screen-password" placeholder="Password" class="login-screen-password-input" style="padding: 5px 8px; font-size: 18px; width:275px; border: 0; outline: 0;"></div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="http://code.jquery.com/color/jquery.color-2.1.2.min.js" integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE=" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+        time = hours + ":" + minutes;
+        var lblTime = document.getElementById("lblTime");
+        lblTime.innerHTML = time.toLocaleString('en-US');
+		var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+		var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        document.getElementById("lblMonths").innerHTML = months[date.getMonth()];
+        document.getElementById("lblDays").innerHTML = days[date.getMonth()];
+        document.getElementById("lblDate").innerHTML = date.getDate();
+    </script>
     <script>
         var password = "";
         $(".login-screen").hide();
